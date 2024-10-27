@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews on Abhijeet's Work</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .review-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        h2 {
+            color: #333;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .copy-button {
+            background-color: #28a745;
+            color: white;
+        }
+        .copy-button:hover {
+            background-color: #218838;
+        }
+        .refresh-button {
+            background-color: #007bff;
+            color: white;
+        }
+        .refresh-button:hover {
+            background-color: #0069d9;
+        }
+        .review-link {
+            background-color: #17a2b8;
+            color: white;
+        }
+        .review-link:hover {
+            background-color: #138496;
+        }
+    </style>
+</head>
+<body>
+    <div class="review-box">
+        <h2>Customer Review</h2>
+        <p id="reviewText">Loading review...</p> <!-- Default text if JavaScript doesn't load -->
+        <button class="copy-button" onclick="copyReview()">Copy Review</button>
+        <button class="refresh-button" onclick="displayRandomReview()">Refresh Review</button>
+        <button class="review-link" onclick="openReviewLink()">Review</button>
+    </div>
+
+    <script>
+        // Array of customer reviews related to printing in Hindi
+        const reviews = [
+            "Mere prints ki quality laajawab hai. Shukriya, Abhijeet!",
+            "Main unki amazing printing service ke liye shukriya ada karta hoon.",
+            "Meri signage ka look bahut shandar hai. Yeh perfect hai!",
+            "Abhijeet ne mere prints ko perfection se tayar kiya.",
+            "Main unki printing quality se bahut khush hoon. Bahut detail par dhyan diya gaya hai.",
+            "Unhone mere design ko zindagi de di. Bahut badiya kaam!",
+            "Mere sublimation prints sharp aur clear hain. Badiya kaam!",
+            "Abhijeet ne mere signage needs ke liye custom solution diya.",
+            "Mere prints jo mujhe mile wo vibrant aur eye-catching hain.",
+            "Mera LED board bahut amazing lag raha hai. Bahut bright aur clear!",
+            "Abhijeet ki detail par dhyan dene ki kala laajawab hai. Main results se bahut khush hoon.",
+            "Tez aur friendly service. Mere experience se bahut khush hoon!",
+            "Mera signage behad sundar dikh raha hai! Rang vibrant hain.",
+            "Abhijeet ne pura process simple aur samajhne mein aasaan bana diya.",
+            "Main service aur quality se impressed hoon. Dusron ko recommend karunga!",
+            "Main unki printing service ko highly recommend karta hoon!",
+            "Abhijeet ka kaam ethic sarahniya hai. Main unki dedication ko appreciate karta hoon.",
+            "Mere prints sabse unchi quality ki hain. Shukriya, Abhijeet!",
+            "Abhijeet ne exceptional service aur great results diye.",
+            "Mere prints ke rang itne vibrant hain! Main bahut khush hoon.",
+            "Mujhe pura experience shandar laga!",
+            "Mujhe prompt service pasand aayi. Mera repair kisi samay mein ho gaya!",
+            "Mujhe apni signage ki outcome se bahut khushi hai.",
+            "Main zaroor future projects ke liye lautunga.",
+            "Abhijeet apne customers ki khushi ko dhyan mein rakhte hain.",
+            "Neon signage ka detail remarkable hai. Yeh waqai mein ek kala ka kaam hai."
+        ];
+
+        // Function to display a random review
+        function displayRandomReview() {
+            const randomIndex = Math.floor(Math.random() * reviews.length);
+            document.getElementById('reviewText').innerText = reviews[randomIndex];
+        }
+
+        // Function to copy the current review to clipboard
+        function copyReview() {
+            const reviewText = document.getElementById('reviewText').innerText;
+            navigator.clipboard.writeText(reviewText).then(() => {
+                alert('Review copied to clipboard!');
+            }).catch(err => {
+                alert('Failed to copy: ' + err);
+            });
+        }
+
+        // Function to open the review link
+        function openReviewLink() {
+            window.open('https://g.page/r/CY-SsTjoK39nEAE/review', '_blank');
+        }
+
+        // Display a random review when the page loads
+        window.onload = displayRandomReview;
+    </script>
+</body>
+</html>
